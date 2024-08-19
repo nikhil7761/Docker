@@ -1,0 +1,11 @@
+# Use the official Nginx image
+FROM nginx:alpine
+
+# Copy the build files from your local Build directory to the Nginx web server's document root
+COPY Build/ /usr/share/nginx/html/
+
+# Expose port 80 to make the application accessible
+EXPOSE 80
+
+# Start Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]

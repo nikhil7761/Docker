@@ -1,0 +1,11 @@
+# Use the official Apache image
+FROM httpd:alpine
+
+# Copy the build files from your local Build directory to the Apache server's document root
+COPY Build/ /usr/local/apache2/htdocs/
+
+# Expose port 80 to make the application accessible
+EXPOSE 80
+
+# Start Apache in the foreground
+CMD ["httpd-foreground"]
